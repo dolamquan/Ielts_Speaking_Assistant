@@ -74,7 +74,7 @@ def record_answer():
 #Utilize OPENAI Api to analyze the user's response and provide feedback as well as a band score    
 def analyze_answer(topic,question,response):
     # Initialize the OpenAI object
-    client = OpenAI(api_key="[YOUR API KEY]")
+    client = OpenAI(api_key=API_KEY)
     # Analyze the response using the OpenAI API
     requirement = (
         f"Assume that you are an IELTS speaking examiner. Evaluate the response: '{response}' "
@@ -111,7 +111,7 @@ def read_question_and_receive_answer(file_path,topic):
 
 #Convert the question into speech
 def text_to_speech(question):
-    client = OpenAI(api_key="[YOUR API KEY]")
+    client = OpenAI(api_key=API_KEY)
     speech_file_path = Path(__file__).parent / "question.mp3"
     response = client.audio.speech.create(
     model="tts-1",
