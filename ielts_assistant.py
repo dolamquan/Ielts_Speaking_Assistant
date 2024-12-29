@@ -60,7 +60,7 @@ def record_answer():
         with sr.Microphone() as source:
             print("listening to your answer....")
             r.adjust_for_ambient_noise(source)
-            audio = r.record(source, duration=10)
+            audio = r.record(source, duration=60)
             print("Processing...")
             text = r.recognize_google(audio)
             print("You said:",text)
